@@ -23,8 +23,9 @@ jobs:
       - name: Copying index file to /var/www/html
         run: |
           pwd
+          sudo rm -f /var/www/html/index.html
           sudo cp /home/ghaction/actions-runner/_work/githubactions/githubactions/index.html /var/www/html/
-          sudo service restart httpd
+          sudo systemctl restart httpd
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     
 
